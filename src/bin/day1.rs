@@ -1,17 +1,7 @@
 use std::fs;
 
 fn main() {
-    let mut elves = fs::read_to_string("./inputs/input1.txt")
-        .unwrap()
-        .split("\n\n")
-        .map(|e| e.lines().collect::<Vec<&str>>())
-        .map(|e| {
-            e.iter()
-                .map(|i| i.parse::<i32>().unwrap())
-                .collect::<Vec<i32>>()
-        })
-        .map(|e| e.iter().sum())
-        .collect::<Vec<i32>>();
+    let mut elves = fs::read_to_string("./inputs/input1.txt").unwrap().split("\n\n").map(|e| e.lines().collect::<Vec<&str>>()).map(|e| {e.iter().map(|i| i.parse::<i32>().unwrap()).collect::<Vec<i32>>()}).map(|e| e.iter().sum()).collect::<Vec<i32>>();
 
     /*let contents = contents.split("\n\n").collect::<Vec<&str>>();
     let elves = contents
