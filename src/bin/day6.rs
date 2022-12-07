@@ -14,5 +14,19 @@ pub fn main() {
         .unwrap()
         + 4;
 
-    println!("pos: {pos}")
+    let pos2 = *&mut fs::read_to_string("./inputs/input6.txt")
+        .unwrap()
+        .chars()
+        .collect::<Vec<char>>()
+        .windows(14)
+        .position(|w| {
+            let test = &mut w.clone().to_vec()[..];
+            test.sort();
+            !(test.partition_dedup().1.len() > 0)
+        })
+        .unwrap()
+        + 14;
+
+    println!("pos: {pos}");
+    println!("pos2: {pos2}")
 }
