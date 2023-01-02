@@ -1,7 +1,3 @@
-//NOTE FOR FUTURE CHRIS:
-//ya i dont think a bigint sol is going to be feasible
-//youre gonna have to do some modulo weirdness
-
 use apint::ApInt;
 use std::collections::VecDeque;
 pub fn main() {
